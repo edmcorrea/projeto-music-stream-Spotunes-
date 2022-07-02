@@ -6,7 +6,7 @@ class Album extends React.Component {
     return (
       <div data-testid="page-album">
         <Header />
-        ProfileEdit
+        <h1>album</h1>
       </div>
     );
   }
