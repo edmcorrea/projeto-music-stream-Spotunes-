@@ -19,7 +19,7 @@ class App extends React.Component {
           <Route path="/favorites" component={ Favorites } />
           <Route path="/profile" component={ Profile } />
           <Route path="/profile/edit" component={ ProfileEdit } />
-          <Route path="/"><Login /></Route>
+          <Route path="/" render={ (props) => <Login { ...props } /> } />
           <Route path="*" component={ NotFound } />
         </Switch>
       </>
