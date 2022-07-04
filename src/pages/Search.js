@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from './Loading';
@@ -14,14 +15,11 @@ class Search extends React.Component {
     loading: false,
   }
 
-  // resultsAPISearch = () => {
-  //   console.log('inserir validacao do bool resultsAlbums (que está descrito no codigo e  do album');
-  // }
   onClickPesquisar = async (event) => {
-    this.setState({ loading: true });
+    const { inputSearch } = this.props;
     event.preventDefault();
     // event.target.value = '';
-    this.setState({ showResults: [] });
+    this.setState({ showResults: [], loading: true });
     const { searchInput } = this.state;
     const showResults = await searchAlbumsAPI(searchInput);
     if (showResults.length) {
@@ -30,7 +28,7 @@ class Search extends React.Component {
         resultsInputArtistas: true,
         resultsInputEmpty: false,
         loading: false,
-      });
+      }, () => inputSearch(searchInput));
     } else {
       this.setState({
         resultsInputEmpty: true,
@@ -117,5 +115,9 @@ class Search extends React.Component {
     );
   }
 }
+
+Search.propTypes = {
+  inputSearch: PropTypes.func.isRequired,
+};
 
 export default Search;
