@@ -1,10 +1,54 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import Loading from './Loading';
 
 class Search extends React.Component {
   state = {
+    searchInput: '',
     isValidateButtonDisabled: true,
+    resultsInputArtistas: false,
+    resultsInputEmpty: false,
+    showResults: [],
+    loading: false,
   }
+
+  // resultsAPISearch = () => {
+  //   console.log('inserir validacao do bool resultsAlbums (que está descrito no codigo e  do album');
+  // }
+  onClickPesquisar = async (event) => {
+    this.setState({ loading: true });
+    event.preventDefault();
+    // event.target.value = '';
+    this.setState({ showResults: [] });
+    const { searchInput } = this.state;
+    const showResults = await searchAlbumsAPI(searchInput);
+    if (showResults.length) {
+      this.setState({
+        showResults: await searchAlbumsAPI(searchInput),
+        resultsInputArtistas: true,
+        resultsInputEmpty: false,
+        loading: false,
+      });
+    } else {
+      this.setState({
+        resultsInputEmpty: true,
+        resultsInputArtistas: false,
+        loading: false,
+      });
+    }
+  }
+
+  ButtonDisabled = () => {
+    const { searchInput } = this.state;
+    const validateLoginLength = 2;
+    if (searchInput.length >= validateLoginLength) {
+      this.setState({ isValidateButtonDisabled: false });
+    } else {
+      this.setState({ isValidateButtonDisabled: true });
+    }
+  };
 
   onInputChance = ({ target }) => {
     this.setState({
@@ -12,40 +56,63 @@ class Search extends React.Component {
     }, () => this.ButtonDisabled());
   };
 
-  ButtonDisabled = () => {
-    const { name } = this.state;
-    const validateLoginLength = 2;
-    if (name.length >= validateLoginLength) {
-      this.setState({ isValidateButtonDisabled: false });
-    } else {
-      this.setState({ isValidateButtonDisabled: true });
-    }
-  };
-
   render() {
-    const { isValidateButtonDisabled } = this.state;
+    const {
+      isValidateButtonDisabled,
+      resultsInputArtistas,
+      searchInput,
+      showResults,
+      resultsInputEmpty,
+      loading } = this.state;
     return (
       <div data-testid="page-search">
         <Header />
-        <form>
-          <label htmlFor="search-input">
-            <input
-              id="search-input"
-              type="text"
-              name="name"
-              data-testid="search-artist-input"
-              onChange={ this.onInputChance }
-            />
-          </label>
-          <button
-            type="submit"
-            disabled={ isValidateButtonDisabled }
-            data-testid="search-artist-button"
-            onClick={ () => {} }
-          >
-            Pesquisar
-          </button>
-        </form>
+        { loading ? <Loading /> : (
+          <div>
+            <form>
+              <label htmlFor="search-input">
+                <input
+                  id="search-input"
+                  type="text"
+                  name="searchInput"
+                  data-testid="search-artist-input"
+                  onChange={ this.onInputChance }
+                />
+              </label>
+              <button
+                type="submit"
+                disabled={ isValidateButtonDisabled }
+                data-testid="search-artist-button"
+                onClick={ this.onClickPesquisar }
+              >
+                Pesquisar
+              </button>
+            </form>
+            { (resultsInputArtistas) ? (
+              <div>
+                <p>
+                  {`Resultado de álbuns de: ${searchInput}`}
+                </p>
+                {showResults.map((artista, index) => (
+                  <Link
+                    to={ `/album/${artista.collectionId}` }
+                    data-testid={ `link-to-album-${artista.collectionId}` }
+                    key={ index }
+                  >
+                    <section>
+                      <img src={ artista.artworkUrl100 } alt={ artista.artistId } />
+                      <h4>{ artista.artistName }</h4>
+                      <p>{ artista.collectionName }</p>
+                    </section>
+                  </Link>
+                ))}
+              </div>
+            ) : null}
+            { (resultsInputEmpty) ? (
+              <h1>Nenhum álbum foi encontrado</h1>
+            ) : null}
+          </div>
+        )}
       </div>
     );
   }
