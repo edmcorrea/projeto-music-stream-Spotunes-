@@ -22,31 +22,33 @@ class App extends React.Component {
   render() {
     const { listArtistas } = this.state;
     return (
-      <>
+      <div>
         <p>TrybeTunes</p>
-        <Route
-          path="/search"
-          render={ () => (
-            <Search
-              inputSearch={ this.inputSearch }
-            />
-          ) }
-        />
-        <Route
-          path="/album/:id"
-          render={ (propsRouter) => (
-            <Album
-              { ...propsRouter }
-              listArtistas={ listArtistas }
-            />
-          ) }
-        />
-        <Route path="/favorites" component={ Favorites } />
-        <Route path="/profile/edit" component={ ProfileEdit } />
-        <Route exact path="/profile" component={ Profile } />
-        <Route exact path="/" render={ (props) => <Login { ...props } /> } />
-        <Route path="*" component={ NotFound } />
-      </>
+        <Switch>
+          <Route
+            path="/search"
+            render={ () => (
+              <Search
+                inputSearch={ this.inputSearch }
+              />
+            ) }
+          />
+          <Route
+            path="/album/:id"
+            render={ (propsRouter) => (
+              <Album
+                { ...propsRouter }
+                listArtistas={ listArtistas }
+              />
+            ) }
+          />
+          <Route path="/favorites" component={ Favorites } />
+          <Route path="/profile/edit" component={ ProfileEdit } />
+          <Route exact path="/profile" component={ Profile } />
+          <Route exact path="/" render={ (props) => <Login { ...props } /> } />
+          <Route exact path="*" component={ NotFound } />
+        </Switch>
+      </div>
     );
   }
 }

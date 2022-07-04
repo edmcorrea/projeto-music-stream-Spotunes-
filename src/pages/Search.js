@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from './Loading';
@@ -16,7 +15,6 @@ class Search extends React.Component {
   }
 
   onClickPesquisar = async (event) => {
-    const { inputSearch } = this.props;
     event.preventDefault();
     // event.target.value = '';
     this.setState({ showResults: [], loading: true });
@@ -28,7 +26,7 @@ class Search extends React.Component {
         resultsInputArtistas: true,
         resultsInputEmpty: false,
         loading: false,
-      }, () => inputSearch(searchInput));
+      });
     } else {
       this.setState({
         resultsInputEmpty: true,
@@ -115,9 +113,5 @@ class Search extends React.Component {
     );
   }
 }
-
-Search.propTypes = {
-  inputSearch: PropTypes.func.isRequired,
-};
 
 export default Search;
