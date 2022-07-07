@@ -3,46 +3,51 @@ import PropTypes from 'prop-types';
 
 class MusicCard extends React.Component {
   render() {
-    const { musics } = this.props;
-    console.log(musics);
+    const { music,
+      trackName,
+      trackId,
+      previewUrl,
+      onInputChangeMusicCard,
+      favorites } = this.props;
+    const isFavorite = favorites.some((item) => item.trackId === music.trackId);
     return (
-      <div>
-        <h2>cardAlbum</h2>
-        {
-          musics.map((music) => (
-            <section key={ music.collectionId }>
-              <p>{ music.trackName }</p>
-              <audio data-testid="audio-component" src={ music.previewUrl } controls>
-                <track kind="captions" />
-                O seu navegador não suporta o elemento
-                {' '}
-                <code>audio</code>
-                .
-              </audio>
-            </section>
-          ))
-          // null
-        }
-      </div>
+      <section key={ trackId }>
+        <p>{trackName }</p>
+        <audio data-testid="audio-component" src={ previewUrl } controls>
+          <track kind="captions" />
+          O seu navegador não suporta o elemento
+          {' '}
+          <code>audio</code>
+          .
+        </audio>
+        <label htmlFor={ trackId }>
+          <input
+            id={ trackId }
+            type="checkbox"
+            data-testid={ `checkbox-music-${trackId}` }
+            onChange={ () => onInputChangeMusicCard(music) }
+            checked={ isFavorite }
+          />
+          Favorita
+        </label>
+      </section>
     );
   }
 }
 
 MusicCard.propTypes = {
-  // album: PropTypes.shape({
-  //   artistName: PropTypes.string.isRequired,
-  //   artworkUrl100: PropTypes.string.isRequired,
-  //   artistId: PropTypes.string.isRequired,
-  //   collectionName: PropTypes.string.isRequired,
-  // }),
-  musics: PropTypes.arrayOf(
+  trackName: PropTypes.string.isRequired,
+  previewUrl: PropTypes.string.isRequired,
+  trackId: PropTypes.number.isRequired,
+  onInputChangeMusicCard: PropTypes.func.isRequired,
+  music: PropTypes.shape({
+    trackId: PropTypes.number.isRequired,
+  }).isRequired,
+  favorites: PropTypes.arrayOf(
     PropTypes.shape({
-      trackName: PropTypes.string.isRequired,
-      previewUrl: PropTypes.string.isRequired,
+      trackId: PropTypes.number,
     }),
   ).isRequired,
 };
-
-// MusicCard.defaultProps = { musics: [] }
 
 export default MusicCard;
