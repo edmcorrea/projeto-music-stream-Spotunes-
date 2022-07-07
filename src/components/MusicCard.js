@@ -44,9 +44,7 @@ MusicCard.propTypes = {
     trackId: PropTypes.number.isRequired,
   }).isRequired,
   favorites: PropTypes.arrayOf(
-    PropTypes.shape({
-      trackId: PropTypes.number,
-    }),
+    PropTypes.shape({}),
   ).isRequired,
 };
 
