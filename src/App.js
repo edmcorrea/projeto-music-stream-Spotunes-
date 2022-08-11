@@ -42,7 +42,10 @@ class App extends React.Component {
               />
             ) }
           />
-          <Route path="/favorites" component={ Favorites } />
+          <Route
+            path="/favorites"
+            component={ Favorites }
+          />
           <Route path="/profile/edit" component={ ProfileEdit } />
           <Route exact path="/profile" component={ Profile } />
           <Route exact path="/" render={ (props) => <Login { ...props } /> } />
