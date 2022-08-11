@@ -8,29 +8,22 @@ class Search extends React.Component {
   state = {
     searchInput: '',
     isValidateButtonDisabled: true,
-    resultsInputArtistas: false,
-    resultsInputEmpty: false,
     showResults: [],
     loading: false,
   }
 
   onClickPesquisar = async (event) => {
     event.preventDefault();
-    // event.target.value = '';
     this.setState({ showResults: [], loading: true });
     const { searchInput } = this.state;
     const showResults = await searchAlbumsAPI(searchInput);
     if (showResults.length) {
       this.setState({
         showResults: await searchAlbumsAPI(searchInput),
-        resultsInputArtistas: true,
-        resultsInputEmpty: false,
         loading: false,
       });
     } else {
       this.setState({
-        resultsInputEmpty: true,
-        resultsInputArtistas: false,
         loading: false,
       });
     }
@@ -55,10 +48,8 @@ class Search extends React.Component {
   render() {
     const {
       isValidateButtonDisabled,
-      resultsInputArtistas,
       searchInput,
       showResults,
-      resultsInputEmpty,
       loading } = this.state;
     return (
       <div data-testid="page-search">
@@ -84,7 +75,7 @@ class Search extends React.Component {
                 Pesquisar
               </button>
             </form>
-            { (resultsInputArtistas) ? (
+            { (showResults.length) ? (
               <div>
                 <p>
                   {`Resultado de álbuns de: ${searchInput}`}
@@ -103,10 +94,7 @@ class Search extends React.Component {
                   </Link>
                 ))}
               </div>
-            ) : null}
-            { (resultsInputEmpty) ? (
-              <h1>Nenhum álbum foi encontrado</h1>
-            ) : null}
+            ) : <h1>Nenhum álbum foi encontrado</h1>}
           </div>
         )}
       </div>

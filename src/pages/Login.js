@@ -25,7 +25,7 @@ class Login extends React.Component {
     event.preventDefault();
     const { name } = this.state;
     this.setState({ loading: true });
-    createUser({ name }) // o mesmo que name: name,
+    createUser({ name })
       .then(() => {
         this.setState({ usuariologado: true });
       });

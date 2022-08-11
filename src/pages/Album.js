@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import Loading from './Loading';
 import MusicCard from '../components/MusicCard';
-import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 
 class Album extends React.Component {
   state = {
@@ -15,7 +15,6 @@ class Album extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({ loading: false });
     this.showCollections();
     this.favoriteSong();
   }
@@ -37,9 +36,16 @@ class Album extends React.Component {
     });
   }
 
-  onInputChangeMusicCard = async (track) => {
+  addFavorite = async (track) => {
     this.setState({ loading: true });
     await addSong(track);
+    await this.favoriteSong();
+    this.setState({ loading: false });
+  }
+
+  removeFavorite = async (track) => {
+    this.setState({ loading: true });
+    await removeSong(track);
     await this.favoriteSong();
     this.setState({ loading: false });
   }
@@ -56,17 +62,22 @@ class Album extends React.Component {
               <img src={ album.artworkUrl100 } alt={ album.artistId } />
               <p data-testid="album-name">{ album.collectionName }</p>
             </section>
-            { musics.map((music) => (
-              <MusicCard
-                key={ music.trackId }
-                music={ music }
-                trackName={ music.trackName }
-                trackId={ music.trackId }
-                previewUrl={ music.previewUrl }
-                onInputChangeMusicCard={ this.onInputChangeMusicCard }
-                favorites={ favorites }
-              />
-            ))}
+            { musics.map((music) => {
+              const isFavorite = favorites.some((item) => item.trackId === music.trackId);
+              return (
+                <MusicCard
+                  key={ music.trackId }
+                  music={ music }
+                  trackName={ music.trackName }
+                  trackId={ music.trackId }
+                  previewUrl={ music.previewUrl }
+                  addFavorite={ this.addFavorite }
+                  removeFavorite={ this.removeFavorite }
+                  favorites={ favorites }
+                  isFavorite={ isFavorite }
+                />
+              );
+            })}
           </div>
         )}
       </div>

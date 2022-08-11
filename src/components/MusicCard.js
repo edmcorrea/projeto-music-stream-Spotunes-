@@ -2,14 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class MusicCard extends React.Component {
+  handleClick = () => {
+    const { addFavorite, removeFavorite, isFavorite, music } = this.props;
+    if (isFavorite) {
+      removeFavorite(music);
+    } else {
+      addFavorite(music);
+    }
+  }
+
   render() {
-    const { music,
-      trackName,
-      trackId,
-      previewUrl,
-      onInputChangeMusicCard,
-      favorites } = this.props;
-    const isFavorite = favorites.some((item) => item.trackId === music.trackId);
+    const { trackName, trackId, previewUrl, isFavorite } = this.props;
     return (
       <section key={ trackId }>
         <p>{trackName }</p>
@@ -25,7 +28,7 @@ class MusicCard extends React.Component {
             id={ trackId }
             type="checkbox"
             data-testid={ `checkbox-music-${trackId}` }
-            onChange={ () => onInputChangeMusicCard(music) }
+            onChange={ this.handleClick }
             checked={ isFavorite }
           />
           Favorita
@@ -36,16 +39,16 @@ class MusicCard extends React.Component {
 }
 
 MusicCard.propTypes = {
-  trackName: PropTypes.string.isRequired,
-  previewUrl: PropTypes.string.isRequired,
-  trackId: PropTypes.number.isRequired,
-  onInputChangeMusicCard: PropTypes.func.isRequired,
+  addFavorite: PropTypes.func.isRequired,
+  // favorites: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  isFavorite: PropTypes.bool.isRequired,
   music: PropTypes.shape({
     trackId: PropTypes.number.isRequired,
   }).isRequired,
-  favorites: PropTypes.arrayOf(
-    PropTypes.shape({}),
-  ).isRequired,
+  previewUrl: PropTypes.string.isRequired,
+  removeFavorite: PropTypes.func.isRequired,
+  trackId: PropTypes.number.isRequired,
+  trackName: PropTypes.string.isRequired,
 };
 
 export default MusicCard;
