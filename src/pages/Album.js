@@ -5,6 +5,7 @@ import getMusics from '../services/musicsAPI';
 import Loading from './Loading';
 import MusicCard from '../components/MusicCard';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
+import '../css/album.css';
 
 class Album extends React.Component {
   state = {
@@ -57,28 +58,30 @@ class Album extends React.Component {
       <div data-testid="page-album">
         <Header />
         {loading ? <Loading /> : (
-          <div>
-            <section>
+          <div className="album">
+            <section className="album-info">
               <h3 data-testid="artist-name">{ album.artistName }</h3>
               <img src={ album.artworkUrl100 } alt={ album.artistId } />
               <p data-testid="album-name">{ album.collectionName }</p>
             </section>
-            { musics.map((music) => {
-              const isFavorite = favorites.some((item) => item.trackId === music.trackId);
-              return (
-                <MusicCard
-                  key={ music.trackId }
-                  music={ music }
-                  trackName={ music.trackName }
-                  trackId={ music.trackId }
-                  previewUrl={ music.previewUrl }
-                  addFavorite={ this.addFavorite }
-                  removeFavorite={ this.removeFavorite }
-                  favorites={ favorites }
-                  isFavorite={ isFavorite }
-                />
-              );
-            })}
+            <section>
+              { musics.map((music) => {
+                const isFav = favorites.some((item) => item.trackId === music.trackId);
+                return (
+                  <MusicCard
+                    key={ music.trackId }
+                    music={ music }
+                    trackName={ music.trackName }
+                    trackId={ music.trackId }
+                    previewUrl={ music.previewUrl }
+                    addFavorite={ this.addFavorite }
+                    removeFavorite={ this.removeFavorite }
+                    favorites={ favorites }
+                    isFavorite={ isFav }
+                  />
+                );
+              })}
+            </section>
           </div>
         )}
       </div>

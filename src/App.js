@@ -23,7 +23,6 @@ class App extends React.Component {
     const { listArtistas } = this.state;
     return (
       <div>
-        <p>TrybeTunes</p>
         <Switch>
           <Route
             path="/search"

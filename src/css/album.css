@@ -1,0 +1,21 @@
+.album {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.album-info {
+
+  /* justify-content: center; */
+  align-items: center;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+
+.music-card {
+  display: flex;
+  flex-direction: column;
+
+}

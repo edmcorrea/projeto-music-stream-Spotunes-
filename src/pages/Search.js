@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from './Loading';
+import '../css/search.css';
+import logoWhite from '../images/logoSimpleWhite.png';
 
 class Search extends React.Component {
   state = {
@@ -52,21 +54,28 @@ class Search extends React.Component {
       showResults,
       loading } = this.state;
     return (
-      <div data-testid="page-search">
+      <div
+        data-testid="page-search"
+        className="page-search"
+      >
         <Header />
         { loading ? <Loading /> : (
-          <div>
+          <div className="search">
             <form>
+              <img src={ logoWhite } alt="logoWhite" className="imgLogoWhite" />
               <label htmlFor="search-input">
                 <input
+                  className="search-input"
                   id="search-input"
                   type="text"
                   name="searchInput"
                   data-testid="search-artist-input"
                   onChange={ this.onInputChance }
+                  placeholder="DIGITE AQUI A SUA PESQUISA"
                 />
               </label>
               <button
+                className="search-btn"
                 type="submit"
                 disabled={ isValidateButtonDisabled }
                 data-testid="search-artist-button"
@@ -75,26 +84,29 @@ class Search extends React.Component {
                 Pesquisar
               </button>
             </form>
-            { (showResults.length) ? (
-              <div>
-                <p>
-                  {`Resultado de álbuns de: ${searchInput}`}
-                </p>
-                {showResults.map((artista, index) => (
-                  <Link
-                    to={ `/album/${artista.collectionId}` }
-                    data-testid={ `link-to-album-${artista.collectionId}` }
-                    key={ index }
-                  >
-                    <section>
-                      <img src={ artista.artworkUrl100 } alt={ artista.artistId } />
-                      <h4>{ artista.artistName }</h4>
-                      <p>{ artista.collectionName }</p>
-                    </section>
-                  </Link>
-                ))}
-              </div>
-            ) : <h1>Nenhum álbum foi encontrado</h1>}
+            <section className="results-search">
+              { (showResults.length) ? (
+                <div>
+                  <h2>
+                    {`Resultado de álbuns de: ${searchInput}`}
+                  </h2>
+                  <section className="cards-search">
+                    {showResults.map((artista, index) => (
+                      <Link
+                        to={ `/album/${artista.collectionId}` }
+                        data-testid={ `link-to-album-${artista.collectionId}` }
+                        key={ index }
+                        className="card-search"
+                      >
+                        <img src={ artista.artworkUrl100 } alt={ artista.artistId } />
+                        <h4>{ artista.artistName }</h4>
+                        <p>{ artista.collectionName }</p>
+                      </Link>
+                    ))}
+                  </section>
+                </div>
+              ) : <h1 className="else-card">Nenhum álbum foi encontrado</h1>}
+            </section>
           </div>
         )}
       </div>
