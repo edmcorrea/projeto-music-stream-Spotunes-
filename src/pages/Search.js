@@ -71,7 +71,7 @@ class Search extends React.Component {
                   name="searchInput"
                   data-testid="search-artist-input"
                   onChange={ this.onInputChance }
-                  placeholder="DIGITE AQUI A SUA PESQUISA"
+                  placeholder="DIGITE AQUI SUA PESQUISA"
                 />
               </label>
               <button
@@ -86,7 +86,7 @@ class Search extends React.Component {
             </form>
             <section className="results-search">
               { (showResults.length) ? (
-                <div>
+                <div className="result-search">
                   <h2>
                     {`Resultado de álbuns de: ${searchInput}`}
                   </h2>

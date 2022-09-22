@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../css/musicCard.css';
 
 class MusicCard extends React.Component {
   handleClick = () => {
@@ -15,7 +16,7 @@ class MusicCard extends React.Component {
     const { trackName, trackId, previewUrl, isFavorite } = this.props;
     return (
       <section key={ trackId } className="music-card">
-        <p>{trackName }</p>
+        <p>{ trackName }</p>
         <audio data-testid="audio-component" src={ previewUrl } controls>
           <track kind="captions" />
           O seu navegador não suporta o elemento

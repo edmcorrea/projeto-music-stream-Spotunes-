@@ -55,16 +55,18 @@ class Album extends React.Component {
     const { loading, album, musics, favorites } = this.state;
     console.log(favorites);
     return (
-      <div data-testid="page-album">
+      <div data-testid="page-album" className="page-album">
         <Header />
         {loading ? <Loading /> : (
           <div className="album">
             <section className="album-info">
-              <h3 data-testid="artist-name">{ album.artistName }</h3>
               <img src={ album.artworkUrl100 } alt={ album.artistId } />
-              <p data-testid="album-name">{ album.collectionName }</p>
+              <div>
+                <h3 data-testid="artist-name">{ album.artistName }</h3>
+                <p data-testid="album-name">{ album.collectionName }</p>
+              </div>
             </section>
-            <section>
+            <section className="results-album">
               { musics.map((music) => {
                 const isFav = favorites.some((item) => item.trackId === music.trackId);
                 return (

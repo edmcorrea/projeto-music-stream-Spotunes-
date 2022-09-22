@@ -22,9 +22,9 @@
 }
 
 .imgLogoWhite {
-  left: 340px;
+  left: 18vw;
   position: absolute;
-  top: 35px;
+  top: 3vh;
   transform: rotate(-5deg);
   width: 180px;
 }
@@ -58,8 +58,14 @@
 
 .results-search {
   background-color: rgb(228, 228, 228);
+  display: flex;
   height: 75vh;
+  justify-content: center;
+}
 
+.result-search h2 {
+  display: flex;
+  justify-content: center;
 }
 
 .cards-search {

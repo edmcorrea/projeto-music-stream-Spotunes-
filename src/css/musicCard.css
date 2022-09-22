@@ -1,0 +1,12 @@
+.music-card {
+  align-items: center;
+  border-bottom: 1px solid rgba(121, 121, 121, 0.322);
+  display: flex;
+  justify-content: end;
+  margin: 0 90px;
+  padding: 20px;
+}
+
+.music-card audio {
+  margin: 0 20px;
+}

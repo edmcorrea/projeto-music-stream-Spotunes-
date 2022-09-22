@@ -1,21 +1,38 @@
+.page-album {
+  display: flex;
+  font-family: Epilogue , sans-serif;
+  height: 100vh;
+}
+
 .album {
   display: flex;
-  flex-grow: 1;
+  flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 
 .album-info {
-
-  /* justify-content: center; */
   align-items: center;
-  background-color: red;
+  background: linear-gradient(to right, #2e01d1, #312768);
+  color: white;
   display: flex;
-  flex-direction: column;
   font-size: 20px;
+  font-weight: 700;
+  gap: 30px;
+  height: 25vh;
 }
 
-.music-card {
+.album-info img {
+  border: 1px solid white;
+  margin: 100px;
+  width: 130px;
+}
+
+.results-album {
   display: flex;
   flex-direction: column;
-
+  background-color: rgb(228, 228, 228);
+  height: 70vh;
+  /* justify-content: center; */
+  padding-top: 5vh;
 }
