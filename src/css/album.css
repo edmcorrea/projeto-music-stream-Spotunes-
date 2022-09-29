@@ -12,7 +12,7 @@
 }
 
 .album-info {
-  align-items: center;
+  align-items: flex-end;
   background: linear-gradient(to right, #2e01d1, #312768);
   color: white;
   display: flex;
@@ -22,17 +22,24 @@
   height: 25vh;
 }
 
-.album-info img {
-  border: 1px solid white;
+.album img {
   margin: 100px;
-  width: 130px;
+  position: absolute;
+  width: 220px;
+}
+
+.album-info div {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  gap: 30px;
+  margin-left: 350px;
 }
 
 .results-album {
+  background-color: rgb(228, 228, 228);
   display: flex;
   flex-direction: column;
-  background-color: rgb(228, 228, 228);
   height: 70vh;
-  /* justify-content: center; */
   padding-top: 5vh;
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import heartOutline from '../images/heart-outline.png';
+import heart from '../images/heart.png';
 import '../css/musicCard.css';
 
 class MusicCard extends React.Component {
@@ -24,16 +26,14 @@ class MusicCard extends React.Component {
           <code>audio</code>
           .
         </audio>
-        <label htmlFor={ trackId }>
-          <input
-            id={ trackId }
-            type="checkbox"
-            data-testid={ `checkbox-music-${trackId}` }
-            onChange={ this.handleClick }
-            checked={ isFavorite }
-          />
-          Favorita
-        </label>
+        <button
+          type="button"
+          src={ isFavorite ? heart : heartOutline }
+          onClick={ this.handleClick }
+          className="favorite-button"
+        >
+          <img src={ isFavorite ? heart : heartOutline } alt="favoriteMusic" />
+        </button>
       </section>
     );
   }

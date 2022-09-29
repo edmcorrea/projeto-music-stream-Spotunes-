@@ -4,9 +4,24 @@
   display: flex;
   justify-content: end;
   margin: 0 90px;
+  margin-left: 35%;
   padding: 20px;
 }
 
 .music-card audio {
   margin: 0 20px;
+}
+
+.favorite-button {
+  background-color: hsla(0, 0%, 0%, 0);
+  border: none;
+  height: 30px;
+  padding: 0;
+  width: 30px;
+}
+
+.favorite-button img {
+  height: 25px;
+  margin: 0;
+  width: 25px;
 }

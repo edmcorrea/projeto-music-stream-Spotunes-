@@ -1,0 +1,72 @@
+.page-profile {
+  background-color: rgb(228, 228, 228);
+  display: flex;
+}
+
+.profile {
+  width: 100%;
+}
+
+.profile-header {
+  align-items: flex-end;
+  background: linear-gradient(to right, #2e01d1, #312768);
+  color: white;
+  display: flex;
+  font-size: 20px;
+  font-weight: 700;
+  gap: 30px;
+  height: 25vh;
+}
+
+.profile-header img {
+  background-color: white;
+  border-radius: 100%;
+  margin: 100px 70px;
+  position: absolute;
+  width: 220px;
+}
+
+.profile-header h2 {
+  color: white;
+  font-weight: 700;
+  gap: 30px;
+  margin-left: 350px;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-info {
+  background-color: rgb(228, 228, 228);
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  justify-content: center;
+  margin-left: 350px;
+}
+
+.profile-card a {
+  margin-bottom: 50px;
+  margin-left: 350px;
+}
+
+.profile-btn {
+  align-items: center;
+  background: linear-gradient(to right, #312768, #2e01d1);
+  border: 0.5px solid white;
+  border-radius: 23px;
+  color: white;
+  display: flex;
+  font-size: 17px;
+  font-weight: 700;
+  height: 25px;
+  justify-content: center;
+  padding: 18px 25px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+}
+

@@ -1,0 +1,36 @@
+.page-favorites {
+  display: flex;
+}
+
+.favorites {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.title-favorites {
+  align-items: center;
+  background: linear-gradient(to right, #2e01d1, #312768);
+  color: white;
+  display: flex;
+  font-size: 30px;
+  font-weight: 700;
+  height: 25vh;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.cardFavorite {
+  align-items: center;
+  border-bottom: 1px solid rgba(121, 121, 121, 0.322);
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 25%;
+  padding: 30px 5%;
+}
+
+.cardFavorite audio {
+  margin: 0 20px;
+}
