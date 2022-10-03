@@ -5,6 +5,7 @@ import '../css/profile.css';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
 import ProfileNoneImage from '../images/profile-none-image.png';
+import logoWhite from '../images/logoSimpleWhite.png';
 
 class Profile extends React.Component {
   state = {
@@ -35,6 +36,7 @@ class Profile extends React.Component {
           {loading ? <Loading />
             : (
               <div className="profile-card">
+                <img src={ logoWhite } alt="logoWhite" className="imgLogoWhiteback" />
                 <section className="profile-header">
                   <img
                     data-testid="profile-image"
@@ -44,25 +46,32 @@ class Profile extends React.Component {
                   <h2>Profile</h2>
                 </section>
                 <div className="profile-info">
-                  <h4>
-                    Nome:
-                    {' '}
-                  </h4>
-                  <p>{ nameLogin || 'Nome' }</p>
-                  <h4>
-                    email:
-                    {' '}
-                  </h4>
-                  <p>
-                    { email || 'sem email' }
-                  </p>
-                  <h4>
-                    descrição:
-                    {' '}
-                  </h4>
-                  <p>
-                    { description || 'sem descrição' }
-                  </p>
+                  <div> </div>
+                  <div>
+                    <h3 className="infos-render">
+                      Nome:
+                      {' '}
+                    </h3>
+                    <p className="infos-render">{ nameLogin || 'Nome' }</p>
+                  </div>
+                  <div>
+                    <h3 className="infos-render">
+                      email:
+                      {' '}
+                    </h3>
+                    <p className="infos-render">
+                      { email || 'sem email' }
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="infos-render">
+                      descrição:
+                      {' '}
+                    </h3>
+                    <p className="infos-render">
+                      { description || 'sem descrição' }
+                    </p>
+                  </div>
                 </div>
                 <Link to="/profile/edit" className="profile-btn">Editar perfil</Link>
               </div>

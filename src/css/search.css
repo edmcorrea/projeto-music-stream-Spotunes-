@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&display=swap') ;
 
 .page-search {
+  background-color: #292929;
   display: flex;
   font-family: Epilogue , sans-serif;
   height: 100vh;
@@ -14,7 +15,8 @@
 
 .search form {
   align-items: center;
-  background: linear-gradient(to right, #2e01d1, #312768);
+  background: linear-gradient(to bottom, #0e0870, #292929);
+  border-bottom: 0.1px solid white;
   display: flex;
   height: 25vh;
   justify-content: center;
@@ -22,18 +24,21 @@
 }
 
 .imgLogoWhite {
-  left: 18vw;
+  filter: blur(7px);
+  left: 19vw;
   position: absolute;
-  top: 3vh;
+  top: 5vh;
   transform: rotate(-5deg);
-  width: 180px;
+  width: 120px;
 }
 
 .search-input {
-  background-color: white;
+  background-color: #292929;
   border: 0.5px solid white;
   border-radius: 23px;
+  color: white;
   font-size: 20px;
+  font-weight: 700;
   height: 30px;
   margin-right: 15px;
   padding: 5px 15px;
@@ -42,7 +47,7 @@
 
 .search-btn {
   align-items: center;
-  background: linear-gradient(to right, #312768, #2e01d1);
+  background: linear-gradient(to bottom right, #110b5f, #003be5);
   border: 0.5px solid white;
   border-radius: 23px;
   color: white;
@@ -57,13 +62,14 @@
 }
 
 .results-search {
-  background-color: rgb(228, 228, 228);
+  background-color: #292929;
   display: flex;
   height: 75vh;
   justify-content: center;
 }
 
 .result-search h2 {
+  color: white;
   display: flex;
   justify-content: center;
 }
@@ -102,5 +108,23 @@
 }
 
 .else-card {
-  color: #2e01d1;
+  color: white;
+}
+
+.cards-search a {
+  color: white;
+  text-decoration: none;
+}
+
+.cards-search a:active {
+  color: white;
+}
+
+.imgLogoWhiteback {
+  filter: blur(7px);
+  right: 19vw;
+  position: absolute;
+  top: 5vh;
+  transform: rotate(-5deg);
+  width: 160px;
 }

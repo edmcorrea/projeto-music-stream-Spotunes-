@@ -1,9 +1,13 @@
 import React from 'react';
+import giftunes from '../images/spotunes.gif';
+import '../css/loading.css';
 
 class Loading extends React.Component {
   render() {
     return (
-      <h3>Carregando...</h3>
+      <div className="page-loading">
+        <img className="gif" src={ giftunes } alt="gif spoTunes" />
+      </div>
     );
   }
 }

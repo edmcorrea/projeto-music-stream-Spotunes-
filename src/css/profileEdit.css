@@ -1,13 +1,13 @@
-.page-profile {
+.page-profile-edit {
   background-color: #292929;
   display: flex;
 }
 
-.profile {
+.profile-edit {
   width: 100%;
 }
 
-.profile-header {
+.profile-edit-header {
   align-items: flex-end;
   background: linear-gradient(to bottom, #0e0870, #292929);
   color: white;
@@ -18,45 +18,55 @@
   height: 25vh;
 }
 
-.profile-header img {
+.img-profile {
   background-color: white;
   border-radius: 100%;
-  box-shadow: 2px 2px 5px rgb(163, 163, 163);
+  box-shadow: 1px 5px 18px rgb(163, 163, 163);
   height: 220px;
   margin: 100px 70px;
   position: absolute;
   width: 220px;
 }
 
-.profile-header h2 {
+.img-profile-editado {
+  display: flex;
+  flex-direction: column;
+  margin: -70px 70px;
+  position: absolute;
+}
+
+.profile-edit-header h2 {
   color: white;
   font-weight: 700;
-  gap: 30px;
   margin-left: 350px;
 }
 
-.profile-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.profile-info {
+.profile-edit-info {
   background-color: #292929;
   color: white;
   display: flex;
   flex-direction: column;
-  height: 70vh;
+  height: 50vh;
   justify-content: center;
+}
+
+.profile-edit-info button {
+  margin: auto;
+}
+
+.profile-edit-inputs {
+  background-color: #292929;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 400px;
   margin-left: 350px;
 }
 
-.profile-card a {
-  margin-bottom: 50px;
-  margin-left: 350px;
+.profile-edit-inputs p {
+  font-size: 13px;
 }
 
-.profile-btn {
+.profile-edit-btn {
   align-items: center;
   background: linear-gradient(to right, #312768, #2e01d1);
   border: 0.5px solid white;
@@ -73,11 +83,3 @@
   text-transform: uppercase;
   width: 200px;
 }
-
-.infos-render {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* border: 1px solid white; */
-  /* margin: 100px 0; */
-}
-

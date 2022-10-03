@@ -38,6 +38,7 @@ class Album extends React.Component {
   }
 
   addFavorite = async (track) => {
+    console.log(track);
     this.setState({ loading: true });
     await addSong(track);
     await this.favoriteSong();
@@ -53,14 +54,17 @@ class Album extends React.Component {
 
   render() {
     const { loading, album, musics, favorites } = this.state;
-    console.log(favorites);
     return (
       <div data-testid="page-album" className="page-album">
         <Header />
         {loading ? <Loading /> : (
           <div className="album">
             <section className="album-info">
-              <img src={ album.artworkUrl100 } alt={ album.artistId } />
+              <img
+                className="imgArtist"
+                src={ album.artworkUrl100 }
+                alt={ album.artistId }
+              />
               <div>
                 <h3 data-testid="artist-name">{ album.artistName }</h3>
                 <p data-testid="album-name">{ album.collectionName }</p>
@@ -72,6 +76,7 @@ class Album extends React.Component {
                 return (
                   <MusicCard
                     key={ music.trackId }
+                    loading={ loading }
                     music={ music }
                     trackName={ music.trackName }
                     trackId={ music.trackId }

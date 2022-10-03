@@ -1,10 +1,12 @@
 .music-card {
   align-items: center;
   border-bottom: 1px solid rgba(121, 121, 121, 0.322);
+  color: white;
   display: flex;
   justify-content: end;
   margin: 0 90px;
   margin-left: 35%;
+  margin-right: 10%;
   padding: 20px;
 }
 
@@ -13,15 +15,17 @@
 }
 
 .favorite-button {
-  background-color: hsla(0, 0%, 0%, 0);
-  border: none;
-  height: 30px;
+  align-items: center;
+  /* background-color: hsla(0, 0%, 0%, 0); */
+  /* border: none; */
+  /* height: 30px; */
   padding: 0;
-  width: 30px;
+  /* width: 30px; */
 }
 
 .favorite-button img {
   height: 25px;
-  margin: 0;
+  justify-content: center;
+  /* margin: 0; */
   width: 25px;
 }

@@ -1,13 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&display=swap') ;
+
 .login {
   align-items: center;
 
-  /* width: 100%; */
-  background: linear-gradient(to right, #2e01d1, #2a1e6e);
+  /* background: linear-gradient(to right, #2e01d1, #2a1e6e); */
+  background: linear-gradient(to bottom right, #0e0870, #2c2c2c);
   display: flex;
-
-  /* flex-direction: column; */
+  font-family: Epilogue , sans-serif;
   height: 100vh; /* como colocar o bg na pagina inteira sem colocar como height */
   justify-content: center;
+}
+
+.logo-bg-login {
+  width: 200px;
+}
+
+.name-login {
+  color: white;
+  margin-bottom: 90px;
 }
 
 .tam1 {
@@ -18,14 +28,14 @@
 
 .form-login {
   align-items: center;
-  background-color: #53535354;
+  background: linear-gradient(to bottom right, #2c2c2c, #110b5f);
   border: 0.5px solid white;
-  border-radius: 10px;
+  border-radius: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 20px;
-  width: 300px;
+  padding: 40px;
+  width: 500px;
 }
 
 .input {
@@ -39,32 +49,20 @@
 
 .login-btn {
   align-items: center;
-  background: linear-gradient(to right, #2e01d1, #312768);
+  background: linear-gradient(to right, #110b5f, #2c2c2c);
   border: 0.5px solid white;
   border-radius: 10px;
   color: white;
   display: flex;
   font-size: 17px;
   font-weight: 700;
-  height: 35px;
+  height: 38px;
   justify-content: center;
   line-height: 1.2;
   text-transform: uppercase;
-  width: 100%;
+  width: 60%;
 }
 
 .login-btn:disabled {
-  align-items: center;
   background: linear-gradient(to right, #9b9b9b, #696774);
-  border: 0.5px solid white;
-  border-radius: 10px;
-  color: rgb(231, 231, 231);
-  display: flex;
-  font-size: 17px;
-  font-weight: 700;
-  height: 35px;
-  justify-content: center;
-  line-height: 1.2;
-  text-transform: uppercase;
-  width: 100%;
 }

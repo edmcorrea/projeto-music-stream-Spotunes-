@@ -2,6 +2,8 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
+import logo from '../images/logo-bg.png';
+import userIcon from '../images/userIcon.png';
 import '../css/login.css';
 
 class Login extends React.Component {
@@ -10,6 +12,7 @@ class Login extends React.Component {
     isValidateButtonDisabled: true,
     loading: false,
     usuariologado: false,
+    image: userIcon,
   };
 
   ButtonDisabled = () => {
@@ -24,9 +27,9 @@ class Login extends React.Component {
 
   onClickEntrar = (event) => {
     event.preventDefault();
-    const { name } = this.state;
+    const { name, image } = this.state;
     this.setState({ loading: true });
-    createUser({ name })
+    createUser({ name, image })
       .then(() => {
         this.setState({ usuariologado: true });
       });
@@ -49,28 +52,28 @@ class Login extends React.Component {
           <Loading />
         ) : (
           <form className="form-login">
-            <div>
-              <label htmlFor="name-input">
-                <input
-                  className="input"
-                  placeholder="Username"
-                  id="name-input"
-                  type="text"
-                  name="name"
-                  data-testid="login-name-input"
-                  onChange={ this.onInputChance }
-                />
-              </label>
-              <button
-                className="login-btn"
-                type="submit"
-                disabled={ isValidateButtonDisabled }
-                data-testid="login-submit-button"
-                onClick={ this.onClickEntrar }
-              >
-                Entrar
-              </button>
-            </div>
+            <img className="logo-bg-login" src={ logo } alt="logo imagem" />
+            <h1 className="name-login">SpoTunes</h1>
+            <label htmlFor="name-input">
+              <input
+                className="input"
+                placeholder="Username"
+                id="name-input"
+                type="text"
+                name="name"
+                data-testid="login-name-input"
+                onChange={ this.onInputChance }
+              />
+            </label>
+            <button
+              className="login-btn"
+              type="submit"
+              disabled={ isValidateButtonDisabled }
+              data-testid="login-submit-button"
+              onClick={ this.onClickEntrar }
+            >
+              Entrar
+            </button>
           </form>
         )}
       </div>

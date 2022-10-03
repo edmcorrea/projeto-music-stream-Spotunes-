@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import heartOutline from '../images/heart-outline.png';
 import heart from '../images/heart.png';
 import '../css/musicCard.css';
+import Loading from '../pages/Loading';
 
 class MusicCard extends React.Component {
   handleClick = () => {
@@ -15,26 +16,30 @@ class MusicCard extends React.Component {
   }
 
   render() {
-    const { trackName, trackId, previewUrl, isFavorite } = this.props;
+    const { trackName, trackId, previewUrl, isFavorite, loading } = this.props;
     return (
-      <section key={ trackId } className="music-card">
-        <p>{ trackName }</p>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          {' '}
-          <code>audio</code>
-          .
-        </audio>
-        <button
-          type="button"
-          src={ isFavorite ? heart : heartOutline }
-          onClick={ this.handleClick }
-          className="favorite-button"
-        >
-          <img src={ isFavorite ? heart : heartOutline } alt="favoriteMusic" />
-        </button>
-      </section>
+      <div>
+        {loading ? <Loading /> : (
+          <section key={ trackId } className="music-card">
+            <p>{ trackName }</p>
+            <audio data-testid="audio-component" src={ previewUrl } controls>
+              <track kind="captions" />
+              O seu navegador não suporta o elemento
+              {' '}
+              <code>audio</code>
+              .
+            </audio>
+            <button
+              type="button"
+              src={ isFavorite ? heart : heartOutline }
+              onClick={ this.handleClick }
+              className="favorite-button"
+            >
+              <img src={ isFavorite ? heart : heartOutline } alt="favoriteMusic" />
+            </button>
+          </section>
+        )}
+      </div>
     );
   }
 }
@@ -43,6 +48,7 @@ MusicCard.propTypes = {
   addFavorite: PropTypes.func.isRequired,
   // favorites: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   isFavorite: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
   music: PropTypes.shape({
     trackId: PropTypes.number.isRequired,
   }).isRequired,

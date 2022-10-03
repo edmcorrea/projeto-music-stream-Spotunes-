@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../pages/Loading';
-import logo from '../images/earch.png';
+import logo from '../images/logo-bg.png';
 import { getUser } from '../services/userAPI';
 import '../css/header.css';
 
@@ -9,28 +9,30 @@ class Header extends React.Component {
   state = {
     loading: false,
     userName: '',
+    image: '',
   }
 
-  componentDidMount() {
-    this.showUser();
-  }
-
-  showUser = () => {
+  componentDidMount = async () => {
     this.setState({ loading: true });
-    getUser().then((response) => this.setState({
-      userName: response.name,
-      loading: false }));
+    const { name, image } = await getUser();
+    this.setState({
+      userName: name,
+      image,
+    }, () => this.setState({ loading: false }));
   }
 
   render() {
-    const { loading, userName } = this.state;
+    const { loading, userName, image } = this.state;
     return (
       <header data-testid="header-component" className="header">
         <img src={ logo } alt="logo" className="imgLogo" />
         <div className="header-info">
           <section className="header-user-name">
             {loading ? <Loading /> : (
-              <h4 data-testid="header-user-name">{ userName }</h4>
+              <div className="users-header">
+                <img className="header-user-image" src={ image } alt="userImage" />
+                <h4 data-testid="header-user-name">{ userName }</h4>
+              </div>
             )}
           </section>
           <section className="links-header">

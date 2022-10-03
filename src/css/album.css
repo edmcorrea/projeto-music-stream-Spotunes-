@@ -1,7 +1,7 @@
 .page-album {
+  background-color: #292929;
   display: flex;
   font-family: Epilogue , sans-serif;
-  height: 100vh;
 }
 
 .album {
@@ -13,7 +13,7 @@
 
 .album-info {
   align-items: flex-end;
-  background: linear-gradient(to right, #2e01d1, #312768);
+  background: linear-gradient(to bottom, #0e0870, #292929);
   color: white;
   display: flex;
   font-size: 20px;
@@ -22,7 +22,7 @@
   height: 25vh;
 }
 
-.album img {
+.imgArtist {
   margin: 100px;
   position: absolute;
   width: 220px;
@@ -37,7 +37,7 @@
 }
 
 .results-album {
-  background-color: rgb(228, 228, 228);
+  background-color: #292929;
   display: flex;
   flex-direction: column;
   height: 70vh;

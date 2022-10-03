@@ -5,6 +5,7 @@ import heartOutline from '../images/heart-outline.png';
 import heart from '../images/heart.png';
 import { getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import '../css/favorites.css';
+import logoWhite from '../images/logoSimpleWhite.png';
 
 class Favorites extends React.Component {
   state = {
@@ -31,7 +32,9 @@ class Favorites extends React.Component {
     this.setState({ loading: true });
     if (isFavorite) {
       const filterTrack = favorites.filter((music) => music.trackId === Number(trackId));
-      await removeSong(filterTrack);
+      console.log(...filterTrack);
+      await removeSong(...filterTrack);
+      await this.favoriteSong();
     }
     this.setState({ loading: false });
   }
@@ -42,6 +45,11 @@ class Favorites extends React.Component {
       <div data-testid="page-favorites" className="page-favorites">
         <Header />
         <section className="favorites">
+          <img
+            src={ logoWhite }
+            alt="logoWhite"
+            className="imgLogoWhite"
+          />
           <h4
             data-testid="header-user-name"
             className="title-favorites"

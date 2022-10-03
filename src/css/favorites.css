@@ -1,5 +1,7 @@
 .page-favorites {
+  background-color: #292929;
   display: flex;
+  font-family: Epilogue , sans-serif;
 }
 
 .favorites {
@@ -10,7 +12,7 @@
 
 .title-favorites {
   align-items: center;
-  background: linear-gradient(to right, #2e01d1, #312768);
+  background: linear-gradient(to bottom, #0e0870, #292929);
   color: white;
   display: flex;
   font-size: 30px;
@@ -18,13 +20,14 @@
   height: 25vh;
   justify-content: center;
   margin: 0;
-  width: 100%;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .cardFavorite {
   align-items: center;
   border-bottom: 1px solid rgba(121, 121, 121, 0.322);
+  color: white;
   display: flex;
   justify-content: flex-end;
   margin: 0 25%;
@@ -34,3 +37,15 @@
 .cardFavorite audio {
   margin: 0 20px;
 }
+
+.favorite-button {
+  background-color: hsla(0, 0%, 0%, 0);
+  border: none;
+  padding: 0;
+}
+
+.favorite-button img {
+  height: 25px;
+  width: 25px;
+}
+
