@@ -1,5 +1,5 @@
 .page-favorites {
-  background-color: #292929;
+  background-color: #1f1f1f;
   display: flex;
   font-family: Epilogue , sans-serif;
 }
@@ -20,12 +20,14 @@
   height: 25vh;
   justify-content: center;
   margin: 0;
-  margin-bottom: 30px;
   width: 100%;
 }
 
+.cardsFavorite {
+  background-color: #292929;
+}
+
 .cardFavorite {
-  align-items: center;
   border-bottom: 1px solid rgba(121, 121, 121, 0.322);
   color: white;
   display: flex;

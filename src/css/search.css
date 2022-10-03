@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&display=swap') ;
 
 .page-search {
-  background-color: #292929;
+  background-color: #1f1f1f;
   display: flex;
   font-family: Epilogue , sans-serif;
-  height: 100vh;
+  height: 100%;
 }
 
 .search {
@@ -16,7 +16,6 @@
 .search form {
   align-items: center;
   background: linear-gradient(to bottom, #0e0870, #292929);
-  border-bottom: 0.1px solid white;
   display: flex;
   height: 25vh;
   justify-content: center;
@@ -25,7 +24,7 @@
 
 .imgLogoWhite {
   filter: blur(7px);
-  left: 19vw;
+  left: 22vw;
   position: absolute;
   top: 5vh;
   transform: rotate(-5deg);
@@ -64,7 +63,7 @@
 .results-search {
   background-color: #292929;
   display: flex;
-  height: 75vh;
+  height: 100%;
   justify-content: center;
 }
 
@@ -107,6 +106,10 @@
   margin: 0;
 }
 
+.card-search:hover {
+  transform: scale(1.1);
+}
+
 .else-card {
   color: white;
 }
@@ -122,8 +125,8 @@
 
 .imgLogoWhiteback {
   filter: blur(7px);
-  right: 19vw;
   position: absolute;
+  right: 19vw;
   top: 5vh;
   transform: rotate(-5deg);
   width: 160px;

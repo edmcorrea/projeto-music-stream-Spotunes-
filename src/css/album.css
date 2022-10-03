@@ -1,5 +1,5 @@
 .page-album {
-  background-color: #292929;
+  background-color: #1f1f1f;
   display: flex;
   font-family: Epilogue , sans-serif;
 }
@@ -40,6 +40,6 @@
   background-color: #292929;
   display: flex;
   flex-direction: column;
-  height: 70vh;
+  height: 100%;
   padding-top: 5vh;
 }

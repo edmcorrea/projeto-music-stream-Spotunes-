@@ -29,3 +29,7 @@
   /* margin: 0; */
   width: 25px;
 }
+
+.music-card:hover {
+  transform: scale(1.1);
+}
