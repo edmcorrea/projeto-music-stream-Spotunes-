@@ -55,12 +55,11 @@
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
-Desenvolvemos um app de receitas, utilizando o que há de mais moderno dentro do ecossistema React-Hooks!
+Desenvolvi uma página / plataforma de músicas, utilizando o ecossistema React!
 
-O app consiste em um sistema que permite visualizar, buscar, filtrar, favoritar, compartilhar e acompanhar o processo de preparação de receitas e bebidas. 
-A base de dados foram 2 APIs distintas, uma para comidas e outra para bebidas.
-O layout teve como foco dispositivos móveis, então todos os protótipos vão estar desenvolvidos em telas menores.
-As demandas foram desenvolvidas em paralelo, pelas pessoas do grupo.
+O app consiste em um sistema que permite visualizar, buscar, ouvir, filtrar e favoritar músicas. 
+A base de dados foi a 1 API de músicas do iTunes-Apple (apenas 30 segundos de cada música).
+O layout teve como foco página web, então todos os protótipos vão estar desenvolvidos em telas menores.
 
 <p align="right">(<a href="#readme-top">Voltar ao Topo</a>)</p>
 
@@ -125,15 +124,14 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Uso
 
-Na tela principal, é possível escolher entre bebidas e comidas e também realizar uma busca a partir de um ingrediente, inserindo o nome ou a primeira letra.
+Na tela principal, há a barra de navegação na esquerda, sendo possível navegar pelas páginas de "SEARCH", "FAVORITES" e "PROFILE". Além disso,  é possível Pesquisar por álbuns ou artistas e escolher o álbum que preferir (que faz referência a página SEARCH).
 
-Clicando em uma das comidas (ou bebidas), o usuário é redirecionado para a página de detalhes desse item, mostrando uma prévia para desenvolvimento da receita, além de mostrar opções de acompanhamento para a receita escolhida.
+Na página de ÁLBUM, é possível ouvir um trecho da música e favoritar a mesma, caso seja do interesse salvá-la na página de favoritos.
 
-Ao clicar em iniciar a receita (START RECIPE), o usuário pula para a tela de receita em progresso, onde ele vai dando check's nos ingredientes já preparados, sem perder o progresso da refeição já iniciada anteriormente.
+Na página de FAVORITES, é possível visualizar as músicas favoritadas e desfavoritá-las.
 
-Concluído o preparo da refeição (FINISH  RECIPE), o usuário é redirecinado para a página de receitas concluídas.
+Na página de PROFILE, é possível visualizar as informações do usuário e editá-las, inclusive a imagem.
 
-Além dessas páginas, é possível favoritar os alimentos ou bebidas para fazer posteriormente e também existe a página de profile, onde é possível deslogar o usuário do APP. 
 
 <!-- _=For more examples, please refer to the [Documentation](https://example.com)_ -->
 
