@@ -187,7 +187,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Edmilson Corrêa - edm.correa@hotmail.com
 
-Link do Projeto: https://github.com/edmcorrea/project-app-de-receitas--
+Link do Projeto: https://github.com/edmcorrea/projeto-music-stream-Spotunes-/tree/main
 
 <p align="right">(<a href="#readme-top">Voltar ao topo</a>)</p>
 
