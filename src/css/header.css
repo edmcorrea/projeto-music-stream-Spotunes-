@@ -72,4 +72,9 @@
 
 .links-header a:active {
   color: white;
+  transform: scale(0.9);
+}
+
+.links-header a:hover {
+  transform: scale(1.1);
 }

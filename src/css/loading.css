@@ -1,10 +1,10 @@
 .page-loading {
+  align-items: flex-start;
   display: flex;
   justify-content: center;
   width: 100%;
-  align-items: flex-start;
 }
 
 .gif {
-  width: 80%;
+  width: 70%;
 }
