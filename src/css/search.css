@@ -60,6 +60,15 @@
   width: 200px;
 }
 
+.search-btn:hover {
+  background: linear-gradient(to bottom right, #003be5, #110b5f);
+}
+
+.search-btn:active {
+  background: linear-gradient(to bottom right, #003be5, #110b5f);
+  transform: scale(0.9);
+}
+
 .results-search {
   background-color: #292929;
   display: flex;

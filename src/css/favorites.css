@@ -1,5 +1,5 @@
 .page-favorites {
-  background-color: #1f1f1f;
+  background-color: #292929;
   display: flex;
   font-family: Epilogue , sans-serif;
 }
@@ -25,6 +25,8 @@
 
 .cardsFavorite {
   background-color: #292929;
+  display: flex;
+  justify-content: center;
 }
 
 .cardFavorite {
