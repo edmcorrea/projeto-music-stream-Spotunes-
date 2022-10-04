@@ -17,7 +17,10 @@
   <h3 align="center">STREAM DE MÚSICAS - SPOTUNES</h3>
     <p align="center"> Músicas de qualidade. Basta ouvir! </p>
   
-  ![Design sem nome](https://user-images.githubusercontent.com/98132078/188953064-f71f9965-7182-454f-bb2a-a4cbcf57bda9.gif)
+  <p align="center">
+    <img width="700" height="400" src="src/images/para-gif-spotunes.gif">
+  </p>
+  
   <br />
   
   <p align="center">
