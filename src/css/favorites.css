@@ -24,8 +24,10 @@
 }
 
 .cardsFavorite {
+  align-itens: center;
   background-color: #292929;
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
