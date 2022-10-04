@@ -24,7 +24,7 @@
   <br />
   
   <p align="center">
-    <a href="https://lnkd.in/djChP-5h"><strong>Navegue na versão demo web »</strong></a>
+    <a href="https://projeto-music-stream-spotunes.vercel.app/"><strong>Navegue na versão demo web »</strong></a>
   </p>
 </div>
 
