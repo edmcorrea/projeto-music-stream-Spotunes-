@@ -1,4 +1,4 @@
-# projeto-music-stream-Spotunes-
+# Spotunes-music-stream-project
 <!-- Improved compatibility of back to top link: See: https://github.com/edmcorrea/project-app-de-receitas--/blob/main/README.md -->
 <a name="readme-top"></a>
 
