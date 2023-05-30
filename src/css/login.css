@@ -2,8 +2,6 @@
 
 .login {
   align-items: center;
-
-  /* background: linear-gradient(to right, #2e01d1, #2a1e6e); */
   background: linear-gradient(to bottom right, #0e0870, #2c2c2c);
   display: flex;
   font-family: Epilogue , sans-serif;
@@ -30,20 +28,26 @@
   align-items: center;
   background: linear-gradient(to bottom right, #2c2c2c, #110b5f);
   border: 0.5px solid white;
-  border-radius: 30px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 40px;
+  padding: 40px 8px;
   width: 500px;
 }
 
+.input-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .input {
-  background-color: white;
   border: none;
   border-radius: 10px;
   font-size: 20px;
-  margin-bottom: 20px;
+  width: 100%;
   padding: 10px 15px;
 }
 
@@ -54,7 +58,7 @@
   border-radius: 10px;
   color: white;
   display: flex;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   height: 38px;
   justify-content: center;
@@ -65,4 +69,33 @@
 
 .login-btn:disabled {
   background: linear-gradient(to right, #9b9b9b, #696774);
+}
+
+@media ( max-width : 767.98px ) {
+
+  .form-login {
+    width: 65%; 
+  }
+
+  .input-label {
+    width: 60%;
+  }
+}
+
+@media ( max-width : 620px ) {
+  .logo-bg-login {
+    width: 150px;
+  }
+  
+  .name-login {
+    font-size: 20px;
+  }
+
+  .input {
+    font-size: 16px;
+  }
+
+  .login-btn {
+    font-size: 12px;
+  }
 }

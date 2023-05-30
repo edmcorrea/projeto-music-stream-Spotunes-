@@ -54,7 +54,7 @@ class Login extends React.Component {
           <form className="form-login">
             <img className="logo-bg-login" src={ logo } alt="logo imagem" />
             <h1 className="name-login">SpoTunes</h1>
-            <label htmlFor="name-input">
+            <label htmlFor="name-input" className="input-label">
               <input
                 className="input"
                 placeholder="Username"
