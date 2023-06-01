@@ -44,54 +44,65 @@ class Favorites extends React.Component {
     return (
       <div data-testid="page-favorites" className="page-favorites">
         <Header />
-        {loading
-          ? <Loading />
-          : (
-            <section className="favorites">
-              <img
-                src={ logoWhite }
-                alt="logoWhite"
-                className="imgLogoWhite"
-              />
-              <h4
-                data-testid="header-user-name"
-                className="title-favorites"
-              >
-                Músicas Favoritas
-              </h4>
-              <div className="cardsFavorite">
+        <section className="favorites">
+          <div className="favorites-header">
+            <img
+              src={ logoWhite }
+              alt="logoWhite"
+              className="imgLogoWhite"
+            />
+            <h4
+              data-testid="header-user-name"
+              className="title-favorites"
+            >
+              Músicas Favoritas
+            </h4>
+          </div>
+          {loading
+            ? <Loading />
+            : (
+              <div className="cardsFavorite-container">
                 {!favorites.length
                   ? (<h2 className="else-card"> Não há musicas favoritas </h2>)
                   : (
                     favorites.map(({ trackName, trackId, previewUrl }) => {
                       const isFavorite = favorites.some((i) => i.trackId === trackId);
                       return (
-                        <section key={ trackId } className="cardFavorite">
-                          <p>{ trackName }</p>
-                          <audio src={ previewUrl } controls>
-                            <track kind="captions" />
-                            O seu navegador não suporta o elemento
-                            {' '}
-                            <code>audio</code>
-                            .
-                          </audio>
-                          <button
-                            type="button"
-                            onClick={ () => this.handleClick(isFavorite, trackId) }
-                            className="favorite-button"
-                          >
-                            <img
-                              src={ isFavorite ? heart : heartOutline }
-                              alt="favoriteMusic"
-                            />
-                          </button>
-                        </section>
+                        <div
+                          key={ trackId }
+                          className="cardsFavorite"
+                        >
+                          <section className="cardFavorite">
+                            <div className="trackName">
+                              <p>{ trackName }</p>
+                            </div>
+                            <div className="player">
+                              <audio src={ previewUrl } controls>
+                                <track kind="captions" />
+                                O seu navegador não suporta o elemento
+                                {' '}
+                                <code>audio</code>
+                                .
+                              </audio>
+                            </div>
+                            <button
+                              type="button"
+                              onClick={ () => this.handleClick(isFavorite, trackId) }
+                              className="favorite-button"
+                            >
+                              <img
+                                src={ isFavorite ? heart : heartOutline }
+                                alt="favoriteMusic"
+                              />
+                            </button>
+                          </section>
+                        </div>
                       );
                     })
                   )}
               </div>
-            </section>
-          )}
+            )}
+        </section>
       </div>
     );
   }

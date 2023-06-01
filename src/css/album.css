@@ -5,6 +5,7 @@
 }
 
 .album {
+  background-color: red;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +15,7 @@
 .album-info {
   align-items: flex-end;
   background: linear-gradient(to bottom, #0e0870, #292929);
-  color: white;
+  color: #333333;
   display: flex;
   font-size: 20px;
   font-weight: 700;

@@ -36,8 +36,8 @@ class Profile extends React.Component {
           {loading ? <Loading />
             : (
               <div className="profile-card">
-                <img src={ logoWhite } alt="logoWhite" className="imgLogoWhiteback" />
                 <section className="profile-header-container">
+                  <img src={ logoWhite } alt="logoWhite" className="imgLogoWhiteback" />
                   <div className="profile-header">
                     <img
                       data-testid="profile-image"

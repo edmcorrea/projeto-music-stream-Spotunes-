@@ -9,3 +9,9 @@
 .gif {
   width: 70%;
 }
+
+@media screen and (min-width : 1220px ) {
+  .gif {
+    width: 50%;
+  }
+}

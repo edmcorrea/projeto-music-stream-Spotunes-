@@ -1,7 +1,6 @@
 .page-profile {
-  background-color: #1f1f1f;
-  background-color: #292929;
-  color: white;
+  background-color: #0070EB;
+  color: #F6F6F6;
   display: flex;
 }
 
@@ -11,14 +10,14 @@
 }
 
 .profile-header-container {
-  background: linear-gradient(to bottom, #0e0870, #292929);
+  background: linear-gradient(to bottom, #0070EB, #F6F6F6);
   position: relative;
   display: flex;
 
 }
 
 .profile-header {
-  align-items: flex-end;
+  align-items: center;
   display: flex;
   font-size: 20px;
   font-weight: 700;
@@ -29,7 +28,7 @@
 }
 
 .profile-header img {
-  background-color: white;
+  /* background-color: white; */
   border-radius: 100%;
   box-shadow: 2px 2px 5px rgb(163, 163, 163);
   position: absolute;
@@ -44,7 +43,7 @@
 }
 
 .profile-card {
-  background-color: #292929;
+  background-color: #F6F6F6;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,14 +52,14 @@
 .profile-info-container {
   display: flex;
   flex-direction: column;
-  height: 65vh;
+  height: 75vh;
   justify-content: center;
   align-items: center;
   gap: 50px;
 }
 
 .profile-info {
-  background-color: #292929;
+  color: #333333;
   display: flex;
   flex-direction: column;
   width: 70%;
@@ -69,7 +68,7 @@
 
 .profile-btn {
   align-items: center;
-  background: linear-gradient(to right, #312768, #2e01d1);
+  background: linear-gradient(to right, #333333, #0070EB);
   border: 0.5px solid white;
   border-radius: 23px;
   box-shadow: 1px 1px 2px rgb(163, 163, 163);
@@ -85,11 +84,20 @@
 }
 
 @media screen and (max-width : 980px ) {
+  .profile-header {
+    align-items: flex-end;
+  }
+
   .profile-header img {
     margin: 0 30px;
     top: 40px;
     left: 30px;
     width: 120px;
+  }
+
+  .imgLogoWhiteback {
+    right: 10vw;
+    width:100px;
   }
 }
 
@@ -103,6 +111,11 @@
     font-size: 14px;
     padding: 15px 10px;
     width: 200px;
+  }
+
+  .imgLogoWhiteback {
+    right: 5vw;
+    width:50px;
   }
 }
 
