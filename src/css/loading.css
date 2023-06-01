@@ -1,8 +1,9 @@
 .page-loading {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
   justify-content: center;
   width: 100%;
+  margin: auto;
 }
 
 .gif {

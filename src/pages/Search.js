@@ -63,7 +63,10 @@ class Search extends React.Component {
           <div className="search">
             <form>
               <img src={ logoWhite } alt="logoWhite" className="imgLogoWhite" />
-              <label htmlFor="search-input">
+              <label
+                htmlFor="search-input"
+                className="search-label"
+              >
                 <input
                   className="search-input"
                   id="search-input"

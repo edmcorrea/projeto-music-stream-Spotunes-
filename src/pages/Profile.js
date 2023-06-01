@@ -37,43 +37,46 @@ class Profile extends React.Component {
             : (
               <div className="profile-card">
                 <img src={ logoWhite } alt="logoWhite" className="imgLogoWhiteback" />
-                <section className="profile-header">
-                  <img
-                    data-testid="profile-image"
-                    src={ image || ProfileNoneImage }
-                    alt={ nameLogin }
-                  />
-                  <h2>Profile</h2>
+                <section className="profile-header-container">
+                  <div className="profile-header">
+                    <img
+                      data-testid="profile-image"
+                      src={ image || ProfileNoneImage }
+                      alt={ nameLogin }
+                    />
+                    <h2>Profile</h2>
+                  </div>
                 </section>
-                <div className="profile-info">
-                  <div> </div>
-                  <div>
-                    <h3 className="infos-render">
-                      Nome:
-                      {' '}
-                    </h3>
-                    <p className="infos-render">{ nameLogin || 'Nome' }</p>
+                <div className="profile-info-container">
+                  <div className="profile-info">
+                    <div>
+                      <h3 className="infos-render">
+                        Nome:
+                        {' '}
+                      </h3>
+                      <p className="infos-render">{ nameLogin || 'Nome' }</p>
+                    </div>
+                    <div>
+                      <h3 className="infos-render">
+                        email:
+                        {' '}
+                      </h3>
+                      <p className="infos-render">
+                        { email || 'sem email' }
+                      </p>
+                    </div>
+                    <div>
+                      <h3 className="infos-render">
+                        descrição:
+                        {' '}
+                      </h3>
+                      <p className="infos-render">
+                        { description || 'sem descrição' }
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="infos-render">
-                      email:
-                      {' '}
-                    </h3>
-                    <p className="infos-render">
-                      { email || 'sem email' }
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="infos-render">
-                      descrição:
-                      {' '}
-                    </h3>
-                    <p className="infos-render">
-                      { description || 'sem descrição' }
-                    </p>
-                  </div>
+                  <Link to="/profile/edit" className="profile-btn">Editar perfil</Link>
                 </div>
-                <Link to="/profile/edit" className="profile-btn">Editar perfil</Link>
               </div>
             )}
         </div>
