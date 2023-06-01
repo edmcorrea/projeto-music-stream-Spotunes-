@@ -47,7 +47,7 @@
 
 .search-btn {
   align-items: center;
-  background: linear-gradient(to bottom right, #333333, #0070EB);
+  background: linear-gradient(to bottom right, #33333300, #0070EB);
   border: 0.5px solid white;
   border-radius: 23px;
   color: white;
@@ -62,7 +62,7 @@
 }
 
 .search-btn:hover {
-  background: linear-gradient(to bottom right, #003be5, #110b5f);
+  background: linear-gradient(to bottom right, #0070EB, #33333300);
 }
 
 .search-btn:active {

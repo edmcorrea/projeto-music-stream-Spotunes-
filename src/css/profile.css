@@ -68,7 +68,7 @@
 
 .profile-btn {
   align-items: center;
-  background: linear-gradient(to right, #333333, #0070EB);
+  background: linear-gradient(to bottom right, #33333300, #0070EB);
   border: 0.5px solid white;
   border-radius: 23px;
   box-shadow: 1px 1px 2px rgb(163, 163, 163);
