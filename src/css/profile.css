@@ -13,7 +13,6 @@
   background: linear-gradient(to bottom, #0070EB, #F6F6F6);
   position: relative;
   display: flex;
-
 }
 
 .profile-header {
@@ -28,7 +27,6 @@
 }
 
 .profile-header img {
-  /* background-color: white; */
   border-radius: 100%;
   box-shadow: 2px 2px 5px rgb(163, 163, 163);
   position: absolute;

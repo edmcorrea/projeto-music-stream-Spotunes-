@@ -61,31 +61,33 @@ class Album extends React.Component {
           <div className="album">
             <section className="album-info">
               <img
-                className="imgArtist"
+                className="album-info-img"
                 src={ album.artworkUrl100 }
                 alt={ album.artistId }
               />
-              <div>
+              <div className="album-info-texts">
                 <h3 data-testid="artist-name">{ album.artistName }</h3>
                 <p data-testid="album-name">{ album.collectionName }</p>
               </div>
             </section>
-            <section className="results-album">
+            <section className="cardsAlbum-container">
               { musics.map((music) => {
                 const isFav = favorites.some((item) => item.trackId === music.trackId);
                 return (
-                  <MusicCard
-                    key={ music.trackId }
-                    loading={ loading }
-                    music={ music }
-                    trackName={ music.trackName }
-                    trackId={ music.trackId }
-                    previewUrl={ music.previewUrl }
-                    addFavorite={ this.addFavorite }
-                    removeFavorite={ this.removeFavorite }
-                    favorites={ favorites }
-                    isFavorite={ isFav }
-                  />
+                  <div className="cardsAlbum" key={ music.trackId }>
+                    <MusicCard
+                      loading={ loading }
+                      music={ music }
+                      trackName={ music.trackName }
+                      trackId={ music.trackId }
+                      previewUrl={ music.previewUrl }
+                      addFavorite={ this.addFavorite }
+                      removeFavorite={ this.removeFavorite }
+                      favorites={ favorites }
+                      isFavorite={ isFav }
+                    />
+
+                  </div>
                 );
               })}
             </section>

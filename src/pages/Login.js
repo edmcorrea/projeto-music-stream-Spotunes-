@@ -72,7 +72,7 @@ class Login extends React.Component {
               data-testid="login-submit-button"
               onClick={ this.onClickEntrar }
             >
-              Entrar
+              ENTRAR
             </button>
           </form>
         )}

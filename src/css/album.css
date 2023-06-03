@@ -1,46 +1,133 @@
 .page-album {
-  background-color: #1f1f1f;
+  background-color: #0070EB;
   display: flex;
   font-family: Epilogue , sans-serif;
 }
 
 .album {
-  background-color: red;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
 }
 
 .album-info {
   align-items: flex-end;
-  background: linear-gradient(to bottom, #0e0870, #292929);
-  color: #333333;
+  background: linear-gradient(to bottom, #0070EB, #F6F6F6);
   display: flex;
   font-size: 20px;
   font-weight: 700;
   gap: 30px;
   height: 25vh;
+  justify-content: center;
+  position: relative;
 }
 
-.imgArtist {
-  margin: 100px;
+.album-info-img {
+  border-radius: 4px;
+  box-shadow: 2px 2px 5px rgb(163, 163, 163);
   position: absolute;
+  margin: 0 30px;
+  top: 60px;
+  left: 30px;
   width: 220px;
 }
 
-.album-info div {
-  color: white;
+.album-info-texts {
+  color: #333333;
   font-size: 20px;
   font-weight: 700;
   gap: 30px;
-  margin-left: 350px;
+  margin: 0 50px;
 }
 
-.results-album {
-  background-color: #292929;
+.cardsAlbum-container {
+  align-items: center;
+  background-color: #F6F6F6;
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding-top: 5vh;
+  justify-content: center;
+}
+
+.cardsAlbum {
+  align-items: center;
+  border-bottom: 1px solid rgba(121, 121, 121, 0.322);
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.cardAlbum {
+  color: #333333;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 20px;
+  padding: 30px 5%;
+  width: 500px;
+}
+
+.cardAlbum p {
+  text-align: center;
+  margin: auto;
+}
+
+.cardAlbum audio {
+  border: 1px solid #333333;
+  border-radius: 100px;
+}
+
+.album-button {
+  background-color: hsla(0, 0%, 0%, 0);
+  border: none;
+}
+
+.album-button img {
+  height: 25px;
+  width: 25px;
+}
+
+@media screen and (max-width : 1300px ) {
+  .album-info-img {
+    top: 50px;
+    left: 30px;
+    width: 180px;
+  }
+}
+
+@media screen and (max-width : 1000px ) {
+  .album-info {
+    justify-content: end;
+  }
+
+  .album-info-img {
+    margin: 0 30px;
+    top: 50px;
+    left: 30px;
+    width: 180px;
+  }
+}
+
+@media screen and (max-width : 800px ) {
+  .album-info-img {
+    margin: 0 30px;
+    top: 30px;
+    left: 30px;
+    width: 90px;
+  }
+
+  .album-info {
+    justify-content: center;
+  }
+
+  .cardAlbum {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width : 600px ) {
+  .album-info-texts {
+    margin: 0;
+  }
 }
