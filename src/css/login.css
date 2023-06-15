@@ -2,7 +2,9 @@
 
 .login {
   align-items: center;
-  background: linear-gradient(to bottom right, #0070EB, #33333300);
+  background-image: url('../images/listenToMusic.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   font-family: Epilogue , sans-serif;
   height: 100vh; /* como colocar o bg na pagina inteira sem colocar como height */
@@ -58,12 +60,9 @@
   border-radius: 10px;
   box-shadow: 1px 2px 10px #1111116c;
   color: white;
-  /* display: flex; */
   font-size: 16px;
   font-weight: 700;
   height: 38px;
-  /* justify-content: center; */
-  /* line-height: 1.2; */
   width: 60%;
 }
 
